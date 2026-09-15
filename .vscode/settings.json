@@ -13,9 +13,17 @@
     "editor.rulers": [88],
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
+    // 저장할 때 Ruff가 자동 수정 가능한 lint 문제 수정, import 정리, 88자 위치에 가이드라인 표시, 줄 끝 불필요한 공백 제거, 파일 마지막에 빈 줄(newline) 보장
 }
+
 // Ctrl + S
-//   ↓
-// VS Code
-//   ↓ settings.json
-// Ruff 실행
+//    ↓
+// VS Code가 파일 저장
+//    ↓
+// settings.json의 "formatOnSave": true 확인
+//    ↓
+// defaultFormatter로 지정된 Ruff 실행
+//    ↓
+// pyproject.toml의 Ruff 설정 적용
+//    ↓
+// 코드 자동 Formatting
