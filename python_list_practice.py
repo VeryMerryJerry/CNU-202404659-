@@ -120,18 +120,27 @@ print("b:", b)
 # -> a와 b가 같은 내부 list 객체를 보고 있기 때문에 둘 다 변경된 결과를 관찰하는 것
 
 # <정리>
-# Python list
-#    ↓
-# 값이 아니라 객체에 대한 reference를 저장
-#    ↓
-# b = a
-#    ↓
-# 같은 list 객체를 참조
 
-# b = a[:]
-#    ↓
-# 새로운 바깥 list 생성
-#    ↓
-# 하지만 내부 객체에 대한 reference는 복사
-#    ↓
-# Shallow Copy
+# Python List
+#     │
+#     ├─ 객체 자체가 아니라 reference를 저장
+#     │
+#     ├─ b = a
+#     │    └─ 같은 list 객체 참조
+#     │
+#     └─ b = a[:]
+#          └─ 새로운 바깥 list 생성
+#               └─ 내부 객체의 reference는 공유
+#                     → Shallow Copy
+
+# Example 1: b = a
+# → a, b 모두 변경
+
+# Example 2: b = a[:]
+# → b의 바깥 list만 변경
+
+# Example 3: 2D list + b.append()
+# → b의 바깥 list만 변경
+
+# Example 4: 2D list + a[1].append()
+# → 공유하는 내부 객체가 변경되므로 a, b 모두 영향
