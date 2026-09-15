@@ -1,0 +1,21 @@
+// VS Code와 Ruff를 연결하고 자동화
+// VS Code에게 "Ruff를 언제 사용해"라고 알려주는 파일
+{
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true
+        // Python 파일의 formatter는 Ruff로 사용하고, Ctrl + S로 저장할 때 자동으로 실행해
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "explicit",
+        "source.organizeImports.ruff": "explicit"
+    },
+    "editor.rulers": [88],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+}
+// Ctrl + S
+//   ↓
+// VS Code
+//   ↓ settings.json
+// Ruff 실행

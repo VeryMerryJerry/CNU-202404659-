@@ -1,0 +1,21 @@
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# 한 줄 최대 길이 → 88자
+#
+# 검사할 규칙
+# E → pycodestyle 오류
+# F → Pyflakes
+# I → import 정렬
+# B → flake8-bugbear
+
+# Formatting
+# 따옴표 → "
+# 들여쓰기 → space
