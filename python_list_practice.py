@@ -1,5 +1,5 @@
 # 1. List assignment
-
+import copy
 
 a = [1, 2, 3]
 b = a
@@ -144,3 +144,47 @@ print("b:", b)
 
 # Example 4: 2D list + a[1].append()
 # → 공유하는 내부 객체가 변경되므로 a, b 모두 영향
+
+print("\n--- Example 5: Deep Copy ---")
+
+a = [[1, 2], [3, 4]]
+b = copy.deepcopy(a)
+
+a[1].append(5)
+
+print("a:", a)
+print("b:", b)
+
+# Deep Copy
+
+# a → [ ref | ref ]
+#        ↓     ↓
+#      [1,2] [3,4]
+
+
+# b → [ ref | ref ]
+#        ↓     ↓
+#      [1,2] [3,4]
+
+#      ↑
+# 서로 다른 내부 리스트 객체 -> 예) a와 b의 [3, 4]는 서로 다른 리스트
+
+# < 정리 >
+# |   방법               | 바깥 리스트| 내부 리스트
+# |----------------------|-----------|----------
+# | b = a                | 공유      | 공유
+# | b = a[:]             | 복사      | 공유
+# | b = copy.deepcopy(a) | 복사      | 복사
+
+# b = a
+# → 복사 X
+# → 같은 객체를 참조
+
+# b = a[:]
+# → Shallow Copy
+# → 바깥 리스트만 새로 생성
+# → 내부 객체는 공유
+
+# b = copy.deepcopy(a)
+# → Deep Copy
+# → 중첩된 내부 객체까지 복사

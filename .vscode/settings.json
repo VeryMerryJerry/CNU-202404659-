@@ -4,7 +4,7 @@
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true
-        // Python 파일의 formatter는 Ruff로 사용하고, Ctrl + S로 저장할 때 자동으로 실행해
+        // Python 파일의 formatter는 Ruff로 사용하고, Ctrl + S로 저장할 때 자동으로 실행
     },
     "editor.codeActionsOnSave": {
         "source.fixAll.ruff": "explicit",
