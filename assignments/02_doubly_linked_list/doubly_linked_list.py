@@ -41,5 +41,24 @@ class DListNode:
 class DoublyLinkedList:
     def __init__(self):
         self.head = DListNode()
-        self.head.llink = self.head
-        self.head.rlink = self.head
+        self.head.llink = self.head  # head의 왼쪽 링크가 자기 자신을 가리키게 함
+        self.head.rlink = self.head  # head의 오른쪽 링크가 자기 자신을 가리키게 함
+
+
+# DListNode()를 하나 생성해서 head로 사용
+# 하지만 데이터가 없으므로 기본값 Data=None이 들어감
+
+# <예시>
+#  head
+#   ↓
+#  ┌───────────────┐
+#  │ data = None   │
+#  │ llink = None  │
+#  │ rlink = None  │
+#  └───────────────┘
+
+# <헤드 노드>
+# head는 실제 데이터 예)10, 20, 30 등을 저장하기 위한 노드가 아님
+# 삽입, 삭제 코드를 간단하게 할 목적으로 만들어진 노드
+# 헤드포인터와는 구별 필요
+# 공백상태에서는 헤드 노드만 존재
